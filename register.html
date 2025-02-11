@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Farm Connect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="form-page">
+    <div class="form-container">
+        <div class="form-side">
+            <h2>Create Account</h2>
+            <p style="color: #664343;">Join Farm Connect today</p>
+            
+            <form class="login-form">
+                <div class="input-group">
+                    <input type="text" placeholder="Full Name" required>
+                    <i class="fas fa-user"></i>
+                </div>
+                
+                <div class="input-group">
+                    <input type="tel" placeholder="Phone Number" required pattern="[0-9]{10}">
+                    <i class="fas fa-phone"></i>
+                </div>
+                
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+
+                <div class="input-group">
+                    <select required>
+                        <option value="" disabled selected>Select User Type</option>
+                        <option value="farmer">Farmer</option>
+                        <option value="warehouse">Warehouse Owner</option>
+                    </select>
+                    <i class="fas fa-users"></i>
+                </div>
+
+                <button type="submit" class="form-button">Sign Up</button>
+            </form>
+
+            <p class="form-text" style="color: #664343;">
+                Already have an account? <a href="login.html">Login</a>
+            </p>
+        </div>
+        
+        <div class="image-side">
+            <div class="overlay" style="background-color: #FFF0D1;"></div>
+            <div class="image-content">
+                <h1>Join Farm Connect!</h1>
+                <p>Become the part of the seamless flow</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Account created successfully!');
+            window.location.href = 'index.html';
+        });
+    </script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
