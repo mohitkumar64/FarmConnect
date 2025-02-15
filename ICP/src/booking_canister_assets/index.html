@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Connect - Connecting Farmers with Warehouses</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta name="description" content="Farm Connect - Connecting farmers with warehouses for efficient storage solutions">
+    <meta name="keywords" content="farm storage, warehouse, agriculture, farming">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo-svg.svg" alt="Farm Connect Logo" height="40"> 
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html#features" class="nav-link">Features</a></li>
+                    <li><a href="warehouse.html" class="nav-link">Warehouses</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="login.html" class="nav-link">Login</a></li>
+                    <li><a href="register.html" class="nav-btn">sign up <i class="fas fa-arrow-right"></i></a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <button aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 data-aos="fade-up">
+                    <span class="highlight">Revolutionizing</span>
+                    the flow of Agricultural Storage
+                </h1>
+                <p data-aos="fade-up" data-aos-delay="100">Skip the middle man,and maximize your profits. store your harvest. securely and directly sell crop at mandis</p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
+                    <a href="register.html" class="hero-btn primary">
+                        Sign Up <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="features-content">
+                <h2>Why Choose Farm Connect?</h2>
+                <p>Experience the future of agricultural storage with our innovative platform that connects farmers directly with warehouse owners.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Real-time Availability</h3>
+                        <p>Check warehouse space availability and book instantly without delays.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Replace Middleman</h3>
+                        <p>Reducing the extra cost middleman making it cost effective.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Quality Assurance</h3>
+                        <p>All the warehouses are verified images and ratings are available of godowns.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Inventory Management</h3>
+                        <p>Track your stored crops and manage inventory efficiently.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Direct Market Access</h3>
+                        <p>Connect directly with Mandis and get better price for your produce.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Storage Tips</h3>
+                        <p>Get helpful storage suggestions based on your crop type and season to maintain produce quality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your flow of storage solutions</h2>
+            <p>Start your Journey and Connect Smartly</p>
+            <a href="register.html" class="cta-btn">
+                Sign Up <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="blockchain-cta" data-aos="fade-up">
+        <div class="container">
+            <h2>Secure Blockchain Booking</h2>
+            <div class="booking-form">
+                <input type="text" id="farmerId" placeholder="Farmer ID" required>
+                <input type="text" id="warehouseId" placeholder="Warehouse ID" required>
+                <input type="date" id="date" required>
+                <button onclick="bookWarehouse()" class="cta-btn">
+                    <i class="fas fa-lock"></i> Book via ICP Blockchain
+                </button>
+            </div>
+            <div id="bookings" class="blockchain-results"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+1234567890">+91 83708-34337</a></li>
+                        <li><a href="mailto:info@farmconnect.com">info@farmconnect.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Farm Connect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/scroll.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="js/main.js" defer></script>
+
+    <script type="module">
+        import { Actor, HttpAgent } from "https://cdn.jsdelivr.net/npm/@dfinity/agent@0.24.3/+esm";
+        
+        // Initialize agent
+        const agent = new HttpAgent({ 
+            host: "http://127.0.0.1:4943",
+            fetchOptions: { mode: 'no-cors' }
+        });
+
+        // Replace with your canister ID
+        const canisterId = "bkyz2-fmaaa-aaaaa-qaaaq-cai";
+
+        // Create actor
+        const bookingCanister = Actor.createActor(
+            ({ IDL }) => ({
+                bookWarehouse: IDL.Func([IDL.Text, IDL.Text, IDL.Text], [IDL.Text], []),
+                getBookings: IDL.Func([], [IDL.Vec(IDL.Tuple(IDL.Text, IDL.Record({
+                    farmerId: IDL.Text,
+                    warehouseId: IDL.Text,
+                    date: IDL.Text
+                })))], ['query']),
+            }),
+            { agent, canisterId }
+        );
+
+        // Attach to window
+        window.bookWarehouse = async () => {
+            try {
+                const farmerId = document.getElementById("farmerId").value;
+                const warehouseId = document.getElementById("warehouseId").value;
+                const date = document.getElementById("date").value;
+                
+                const result = await bookingCanister.bookWarehouse(farmerId, warehouseId, date);
+                alert("Blockchain Booking Successful!\nTransaction ID: " + result);
+                console.log("ICP Transaction:", result);
+            } catch (error) {
+                console.error("Booking Failed:", error);
+                alert("Booking Failed! Check console for details.");
+            }
+        };
+    </script>
+</body>
+</html>

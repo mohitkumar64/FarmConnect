@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Farm Connect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="form-page">
+    <div class="form-container">
+        <div class="form-side">
+            <h2>Welcome Back</h2>
+            <p style="color: #664343;">Login to your account</p>
+            
+            <form class="login-form">
+                <div class="input-group">
+                    <input type="tel" placeholder="Phone Number" required pattern="[0-9]{10}">
+                    <i class="fas fa-phone"></i>
+                </div>
+                
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+
+                <div class="form-extras">
+                    <label class="remember-me">
+                        <input type="checkbox">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="form-button">Login</button>
+            </form>
+
+            <p class="form-text" style="color: #664343;">
+                Don't have an account? <a href="register.html">Sign up</a>
+            </p>
+        </div>
+        
+        <div class="image-side">
+            <div class="overlay" style="background-color: #FFF0D1;"></div>
+            <div class="image-content">
+                <h1>Welcome Back!</h1>
+                <p>Access your Farm Connect account</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Login successful!');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

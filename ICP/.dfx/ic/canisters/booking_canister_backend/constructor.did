@@ -1,0 +1,14 @@
+type Booking = 
+ record {
+   date: text;
+   farmerId: text;
+   warehouseId: text;
+ };
+service : {
+  addWarehouse: (text, text) -> (text);
+  bookWarehouse: (text, text, text) -> (text);
+  getBookings: () -> (vec record {
+                            text;
+                            Booking;
+                          }) query;
+}
